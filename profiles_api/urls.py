@@ -8,6 +8,8 @@ router = DefaultRouter()
 
 #no / because router automatically registers
 router.register('hello-viewset', views.HelloViewSet, base_name='hello_viewset')
+#don't need a base_name because REST figures this out from the queryset.
+router.register('profile', views.UserProfileViewSet)
 
 urlpatterns = [
     path('hello-view/', views.HelloApiView.as_view()),
